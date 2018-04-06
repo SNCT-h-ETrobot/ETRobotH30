@@ -6,7 +6,7 @@ public class lcdsample {
 
 	public static void main(String[] args){;
 		int 	sec	=	0;		//	カウントする秒数
-		int 	msec=	1000;	//	待機する時間(単位はミリ秒)
+		int 	msec=	1;	//	待機する時間(単位はミリ秒)
 
 		//	以下の処理を無限に繰り返す
 		while(true){
