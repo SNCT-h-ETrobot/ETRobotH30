@@ -14,12 +14,12 @@ public class Traning {
 
 	static RegulatedMotor MotorR = Motor.B;//ポートBに右のモーターがつながっている
 	static RegulatedMotor MotorL = Motor.C;//ポートCに左のモーターがつながっている
-	static EV3ColorSensor colorSensor = new EV3ColorSensor(SensorPort.S3);
+	static EV3ColorSensor colorSensor = new EV3ColorSensor(SensorPort.S2);
 	//使用するセンサーを定義する
 	//タッチセンサーはS2ポートにつながっているためこのように定義する
-	static EV3TouchSensor touchSensor = new EV3TouchSensor(SensorPort.S2);
+	static EV3TouchSensor touchSensor = new EV3TouchSensor(SensorPort.S1);
 	static SensorMode touch;
-	static EV3UltrasonicSensor UltraSonicSensor = new EV3UltrasonicSensor(SensorPort.S4);
+	static EV3UltrasonicSensor UltraSonicSensor = new EV3UltrasonicSensor(SensorPort.S3);
 
 	public static void main(String[] args) {
 		// TODO 自動生成されたメソッド・スタブ
