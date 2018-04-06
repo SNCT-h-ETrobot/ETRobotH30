@@ -10,7 +10,7 @@ public class TouchSample {
 
 	//使用するセンサーを定義する
 	//タッチセンサーはS2ポートにつながっているためこのように定義する
-	static EV3TouchSensor touchSensor = new EV3TouchSensor(SensorPort.S2);
+	static EV3TouchSensor touchSensor = new EV3TouchSensor(SensorPort.S1);
 	static SensorMode touch;
 
 	public static void main(String[] args) {
@@ -33,7 +33,7 @@ public class TouchSample {
 			}
 
 			//0.5秒間待機
-			Delay(500);
+			Delay(1);
 		}
 	}
 

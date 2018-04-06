@@ -6,7 +6,7 @@ import lejos.hardware.sensor.SensorMode;
 import lejos.utility.Delay;
 
 public class colorsample {
-	static EV3ColorSensor colorSensor = new EV3ColorSensor(SensorPort.S3);
+	static EV3ColorSensor colorSensor = new EV3ColorSensor(SensorPort.S2);
 	public static void main(String[] args){
 		float[] RGB 	= new float[3];
 		int colorID	= 0;
