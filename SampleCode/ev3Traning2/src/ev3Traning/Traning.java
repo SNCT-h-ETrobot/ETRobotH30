@@ -33,7 +33,7 @@ public class Traning {
 		}
 		while(true)
 		{
-			//onOffLinetrace(0.5F,50);
+			onOffLinetrace(0.5F,50);
 			//PIDLinetrace(200.0F,10.0F,1.0F,0.5F,50);
 			
 			/*
@@ -63,7 +63,7 @@ public class Traning {
 
 	//輝度値基準値。本番環境で調整必要
 	private final static float BLACK_BRIGHTNESS = 0.01F;
-	private final static float WHITE_BRIGHTNESS = 0.52F;
+	private final static float WHITE_BRIGHTNESS = 0.34F;
 
 	//正規化後の最大・最小値
 	private final static float BRIGHTNESS_MAX = 1.0F;
