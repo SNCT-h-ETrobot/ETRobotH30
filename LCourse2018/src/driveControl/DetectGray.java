@@ -3,12 +3,12 @@ package driveControl;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import Hardware.Hardware;
 import lejos.hardware.lcd.LCD;
 import lejos.utility.Delay;
 import virtualDevices.ArmController;
 import virtualDevices.BrightnessMeasure;
 import virtualDevices.DistanceMeasure;
+import Hardware.Hardware;
 //import ev3Viewer.LogSender;
 
 /**
@@ -16,20 +16,20 @@ import virtualDevices.DistanceMeasure;
  * レース区間終了から、灰色を検知し、レール前まで進んで停止する
  * */
 public class DetectGray{
-	private static final float TARGET_DISTANCE = 100.0f;//灰色終端からレール前までの距離
+	private static final float TARGET_DISTANCE = 30.0f;//灰色終端からレール前までの距離
 	private static final float TARGET_SPEED = 60.0f;
 	private static final float TARGET_SPEED_HI = 80.0f;
 
-	private static final float LT_P = -100.0f;
-	private static final float LT_I = -10.0f;
+	private static final float LT_P = -200.0f;
+	private static final float LT_I = -20.0f;
 	private static final float LT_D = -5.0f;
-	private static final float LT_BRIGHT = 0.58f;//0.62f;//灰色より若干低い値//0.24
-	private static final float LT_P_2 = 120.0f;
-	private static final float LT_I_2 = 30.0f;
-	private static final float LT_D_2 = 5.0f;
+	private static final float LT_BRIGHT = 0.19f;//0.62f;//灰色より若干低い値//0.24
+	private static final float LT_P_2 = -120.0f;
+	private static final float LT_I_2 = -30.0f;
+	private static final float LT_D_2 = -5.0f;
 	private static final float LT_BRIGHT_2 = 0.5f;//
 
-	private static final float GRAY_THRESHOLD = 0.3f;//一定期間でこれだけ変化したら判定
+	private static final float GRAY_THRESHOLD = 0.9f;//一定期間でこれだけ変化したら判定
 	private static final int GRAY_QUEUE = 40;
 
 	//0.02 0.28 0.50
@@ -111,7 +111,7 @@ public class DetectGray{
 			Delay.msDelay(4);
 		}
 		isLT = false;
-		DAC.turn(20, false);
+		//DAC.turn(20, false);
 		isLT = true;
 		ltP = LT_P_2;
 		ltI = LT_I_2;
@@ -122,7 +122,7 @@ public class DetectGray{
 			Delay.msDelay(4);
 		}
 		timer.cancel();
-		
+
 		for (int i = 0; i < 10; i++) {
 			Hardware.motorPortL.controlMotor(0, 1);
 			Hardware.motorPortR.controlMotor(0, 1);

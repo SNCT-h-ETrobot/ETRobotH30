@@ -1,8 +1,6 @@
 package UserInterface;
 
 import Hardware.Hardware;
-//import Information.BlockArrangeInfo;
-//import Information.RouteDriver;
 import driveInstruction.Controller;
 import lejos.hardware.lcd.LCD;
 import virtualDevices.ArmController;
@@ -18,7 +16,6 @@ public class Starter {
 	private MotorAngleMeasure angMeasure;
 	private ArmController armCtrl;
 //	private Communicator com;
-//	private RouteDriver routeDriver;
 
 	public Starter(){
 		controller = new Controller();
@@ -26,8 +23,7 @@ public class Starter {
 		briMeasure = new BrightnessMeasure();
 		angMeasure = new MotorAngleMeasure();
 		armCtrl = new ArmController();
-//		com = new Communicator();
-//		routeDriver = new RouteDriver();
+	//	com = new Communicator();
 
 	}
 
@@ -44,16 +40,8 @@ public class Starter {
 		disMeasure.resetDistance();
 		angMeasure.resetMotorAngle();
 		armCtrl.resetArm();
-		/*
-		LCD.drawString("Connect Ready", 0, 0);
-		BlockArrangeInfo.makeConnection();
-		LCD.drawString("Connect OK   ", 0, 0);
-		com.establishConnection();
-		int code = com.readCode();
-		BlockArrangeInfo.setBlockPlace(code);
-		*/
-		//routeDriver.driveRoute();
 		
+		//com.establishConnection();
 	}
 	public void touchStart(){
 		
