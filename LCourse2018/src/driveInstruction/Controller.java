@@ -21,8 +21,6 @@ public class Controller {	//クラス名は再考が必要
 	public void drive(){
 		RPDriver.driveRacePart();
 		//以後ゲー区間
-		GPDriver.AI_answer_NumberPart();
-		GPDriver.AI_answer_BlockPart();
-		GPDriver.AI_answer_StopPart();
+		GPDriver.driveGamePart();
 	}
 }

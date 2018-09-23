@@ -43,12 +43,11 @@ public class RacePartDriver {
 			sectionList.add(new SectionInfo(4,1020.0F,-40.0F,-10.0F,-5.0F,0.5F,100.0F));//ゴールまで
 			*/
 			
-			sectionList.add(new SectionInfo(0,200.0F,-35.0F,-20.0F,-5.0F,0.5F,100.0F));
-			sectionList.add(new SectionInfo(1,450.0F,-55.0F,-10.0F,-7.0F,0.5F,100.0F));
-			sectionList.add(new SectionInfo(2,700.0F,-95.0F,-20.0F,-10.0F,0.5F,100.0F));
-			sectionList.add(new SectionInfo(3,800.0F,-80.0F,-20.0F,-7.0F,0.5F,100.0F));//ラストの直線前まで
-			sectionList.add(new SectionInfo(4,1020.0F,-35.0F,-10.0F,-7.0F,0.5F,100.0F));//ゴールまで1020
-			sectionList.add(new SectionInfo(5,1040.0F,-300.0F,-200.0F,-100.0F,0.5F,40.0F));
+			sectionList.add(new SectionInfo(0,200.0F,-25.0F,-10.0F,-5.0F,0.5F,100.0F));
+			sectionList.add(new SectionInfo(1,450.0F,-45.0F,-10.0F,-7.0F,0.5F,100.0F));
+			sectionList.add(new SectionInfo(2,700.0F,-80.0F,-10.0F,-7.0F,0.5F,100.0F));
+			sectionList.add(new SectionInfo(3,780.0F,-70.0F,-10.0F,-7.0F,0.5F,100.0F));//ラストの直線前まで
+			sectionList.add(new SectionInfo(4,1025.0F,-25.0F,-10.0F,-5.0F,0.5F,100.0F));//ゴールまで1020
 
 
 		}
@@ -95,6 +94,11 @@ public class RacePartDriver {
 
 		}
 		timer.cancel();
+		tracer.linetraceFast(0.0F,
+				0.0F,
+				0.0F,
+				0.0F,
+				0.0F);
 		//detectGray.run();
 	}
 

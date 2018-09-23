@@ -73,34 +73,37 @@ public class GamePartDriver {
 		//青を動かす
 		int bAI[] = new int[4];
 		bAI = BlockArrangeInfo.getBlockPlaceIDList();
-		if(bAI[0] != 111 && bAI[1] != 111 && bAI[2] != 111 && bAI[3] != 111)
+		if(bAI[0] != 82 && bAI[1] != 82 && bAI[2] != 82 && bAI[3] != 82 && bAI[0] != 78 && bAI[1] != 78 && bAI[2] != 78 && bAI[3] != 78)
 		{
-			missionScenario.add(new DriveInfo(90,true,40.0F,60,true,2) );
-			missionScenario.add(new DriveInfo(0,false,-40.0F,60,false,0) );
-			missionScenario.add(new DriveInfo(-90,false,0.0F,60,false,0) );
+			missionScenario.add(new DriveInfo(-10,true,40.0F,60,true,4) );
+			missionScenario.add(new DriveInfo(-10,true,40.0F,60,true,3) );
+			//missionScenario.add(new DriveInfo(0,false,-80.0F,60,false,0) );
+			BlockArrangeInfo.setBlockPlaceIDList(bAI[0], bAI[1], 82, bAI[3]);
+		}
+		else if(bAI[0] != 111 && bAI[1] != 111 && bAI[2] != 111 && bAI[3] != 111)
+		{
+			missionScenario.add(new DriveInfo(80,true,40.0F,60,true,3) );
+			//missionScenario.add(new DriveInfo(0,false,-40.0F,60,false,0) );
+			//missionScenario.add(new DriveInfo(-90,false,0.0F,60,false,0) );
 			BlockArrangeInfo.setBlockPlaceIDList(bAI[0], bAI[1], 111, bAI[3]);
 		}
 		else if(bAI[0] != 37 && bAI[1] != 37 && bAI[2] != 37 && bAI[3] != 37)
 		{
-			missionScenario.add(new DriveInfo(-90,true,40.0F,60,true,2) );
-			missionScenario.add(new DriveInfo(0,false,-40.0F,60,false,0) );
-			missionScenario.add(new DriveInfo(90,false,0.0F,60,false,0) );
+			missionScenario.add(new DriveInfo(-100,true,40.0F,60,true,3) );
+			//missionScenario.add(new DriveInfo(0,false,-40.0F,60,false,0) );
+			//missionScenario.add(new DriveInfo(90,false,0.0F,60,false,0) );
 			BlockArrangeInfo.setBlockPlaceIDList(bAI[0], bAI[1], 37, bAI[3]);
-		}
-		else if(bAI[0] != 82 && bAI[1] != 82 && bAI[2] != 82 && bAI[3] != 82)
-		{
-			missionScenario.add(new DriveInfo(0,true,40.0F,60,true,3) );
-			missionScenario.add(new DriveInfo(0,true,40.0F,60,true,2) );
-			missionScenario.add(new DriveInfo(0,false,-80.0F,60,false,0) );
-			BlockArrangeInfo.setBlockPlaceIDList(bAI[0], bAI[1], 82, bAI[3]);
 		}
 		else
 		{
-			BlockArrangeInfo.setBlockPlaceIDList(bAI[0], bAI[1], 8, bAI[3]);
+			missionScenario.add(new DriveInfo(0,true,40.0F,60,true,4) );
+			missionScenario.add(new DriveInfo(0,true,40.0F,60,true,3) );
+			//missionScenario.add(new DriveInfo(0,false,-80.0F,60,false,0) );
+			BlockArrangeInfo.setBlockPlaceIDList(bAI[0], bAI[1], 82, bAI[3]);
 		}
 		arm.controlArmNormalAngel();
 		//createMissionScenario(routeDriver.getRoute());
-		createMissionScenario();
+		//createMissionScenario();
 		//dACtrl.goStraightAhead(1000000.0F, 50);
 
 		LCD.drawString("Size:" + missionScenario.size(), 0, 0);
@@ -111,7 +114,7 @@ public class GamePartDriver {
 			public void run(){
 				if(isLinetrace)
 				{
-					linetracer.linetrace(P_GAIN, I_GAIN, D_GAIN, 0.7F, 50,colorDetect.getNormalizedBrightness());
+					linetracer.linetrace(P_GAIN, I_GAIN, D_GAIN, 0.9F, 50,colorDetect.getNormalizedBrightness());
 				}
 			}
 		};
@@ -252,7 +255,7 @@ public class GamePartDriver {
 						Timer timerColor = new Timer();
 						TimerTask colorTask = new TimerTask(){
 							public void run(){
-								if(isLinetrace)linetracer.linetrace(P_GAIN, I_GAIN, D_GAIN, TARGET_BRIGHTNESS, 50,colorDetect.getNormalizedBrightness());
+								if(isLinetrace)linetracer.linetrace(P_GAIN, I_GAIN, D_GAIN, TARGET_BRIGHTNESS, 60,colorDetect.getNormalizedBrightness());
 							}
 						};
 						isLinetrace = true;
@@ -270,7 +273,7 @@ public class GamePartDriver {
 						timerColor.cancel();
 						linetracer.linetrace(P_GAIN, I_GAIN, D_GAIN, TARGET_BRIGHTNESS, 0);
 						Delay.msDelay(200);
-						dACtrl.goStraightAhead(8.0F,speed);
+						dACtrl.goStraightAhead(5.0F,speed);
 					}
 					else
 					{

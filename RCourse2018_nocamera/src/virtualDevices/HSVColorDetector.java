@@ -9,8 +9,8 @@ public class HSVColorDetector {
 	private float brightness;
 
 	//輝度値基準値。本番環境で調整必要 学校では黒0.03,白0.23
-	private final float BLACK_BRIGHTNESS = 0.06F;
-	private final float WHITE_BRIGHTNESS = 0.45F;
+	private final float BLACK_BRIGHTNESS = 0.04F;
+	private final float WHITE_BRIGHTNESS = 0.37F;
 
 	//正規化後の最大・最小値
 	private final float BRIGHTNESS_MAX = 1.0F;
@@ -116,20 +116,20 @@ public class HSVColorDetector {
 		float g = sampleRGB[1];
 		float b = sampleRGB[2];
 
-			if (r > 0.11F && g > 0.11F && b > 0.11F)
+			if (r > 0.08F && g > 0.08F && b > 0.1F)
 			{
 				return 5;//白
 			}
-			else if(r > 0.12F && g > 0.08F){
+			else if(r > 0.13F && g > 0.08F){
 				return 4;//黄
 			}
-			else if(r > 0.12F){
+			else if(r > 0.13F){
 				return 1; //赤
 			}
-			else if(b > 0.12F){
+			else if(b > 0.13F){
 				return 3; //青
 			}
-			else if(g > 0.06F){
+			else if(g > 0.07F){
 				return 2; //緑
 			}
 			else if(r < 0.03F && g < 0.03F && b < 0.03F){

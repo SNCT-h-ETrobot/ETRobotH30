@@ -45,17 +45,15 @@ public class RacePartDriver {
 
 
 		}
-		else if(courseID == 2){	//Lコース 左側走行
+		else if(courseID == 2){	//Lコース 左側走行 これで安定
 			//sectionList.add(new SectionInfo(0,260.0F,-150.0F,-100.0F,-10.0F,0.5F,100.0F));
-			sectionList.add(new SectionInfo(0,240.0F,-30.0F,-10.0F,-5.0F,0.5F,100.0F));//最初のカーブ前まで
-			sectionList.add(new SectionInfo(1,400.0F,-60.0F,-10.0F,-10.0F,0.5F,100.0F));//カーブGATE1まで
-			sectionList.add(new SectionInfo(2,530.0F,-30.0F,-10.0F,-5.0F,0.5F,100.0F));//二つ目のカーブ前まで
-			//sectionList.add(new SectionInfo(3,650.0F,-150.0F,-20.0F,-10.0F,0.5F,80.0F));
-			//sectionList.add(new SectionInfo(4,7000.0F,-40.0F,-10.0F,-5.0F,0.5F,100.0F));
-			sectionList.add(new SectionInfo(3,800.0F,-150.0F,-20.0F,-10.0F,0.5F,80.0F));
-			sectionList.add(new SectionInfo(4,1020.0F,-40.0F,-10.0F,-5.0F,0.5F,100.0F));
-			sectionList.add(new SectionInfo(5,1110.0F,-60.0F,-10.0F,-10.0F,0.5F,100.0F));
-			//sectionList.add(new SectionInfo(6,11000.0F,-0.0F,-10.0F,-5.0F,0.5F,0.0F));
+			sectionList.add(new SectionInfo(0,240.0F,-25.0F,-10.0F,-5.0F,0.5F,100.0F));//最初のカーブ前まで
+			sectionList.add(new SectionInfo(1,400.0F,-50.0F,-5.0F,-5.0F,0.5F,100.0F));//カーブGATE1まで
+			sectionList.add(new SectionInfo(2,560.0F,-25.0F,-10.0F,-5.0F,0.5F,100.0F));//二つ目のカーブ前まで
+			sectionList.add(new SectionInfo(3,650.0F,-70.0F,-10.0F,-5.0F,0.5F,100.0F));
+			sectionList.add(new SectionInfo(4,720.0F,-40.0F,-10.0F,-5.0F,0.5F,100.0F));
+			sectionList.add(new SectionInfo(5,810.0F,-60.0F,-5.0F,-5.0F,0.5F,100.0F));
+			sectionList.add(new SectionInfo(6,1030.0F,-40.0F,-10.0F,-5.0F,0.5F,100.0F));
 			//sectionList.add(new SectionInfo(3,700.0F,-100.0F,-50.0F,-5.0F,0.5F,100.0F));
 			//sectionList.add(new SectionInfo(1,10000.0F,-45.0F,-20.0F,-5.0F,0.5F,0.0F));//GATE1まで
 			//sectionList.add(new SectionInfo(0,200.0F,-150.0F,-25.0F,-5.0F,0.5F,100.0F));
@@ -102,8 +100,14 @@ public class RacePartDriver {
 
 		}
 		timer.cancel();
+		tracer.linetraceFast(0.0F,
+				0.0F,
+				0.0F,
+				0.0F,
+				0.0F);
 		//detectGray.run();
 	}
+
 
 	private void presumeCurrentSection(){
 		float distance = disMeasure.getDistance();

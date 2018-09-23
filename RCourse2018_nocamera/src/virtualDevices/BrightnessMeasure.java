@@ -6,8 +6,8 @@ public class BrightnessMeasure {
 	private float brightness;
 
 	//輝度値基準値。本番環境で調整必要　学校では黒0.03,白0.40 本番黒0.01,白0.36
-	private final float BLACK_BRIGHTNESS = 0.06F;
-	private final float WHITE_BRIGHTNESS = 0.45F;
+	private final float BLACK_BRIGHTNESS = 0.04F;
+	private final float WHITE_BRIGHTNESS = 0.37F;
 
 	//正規化後の最大・最小値
 	private final float BRIGHTNESS_MAX = 1.0F;
